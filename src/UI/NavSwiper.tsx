@@ -23,7 +23,7 @@ const MobileMenu = () => {
     return (
         <AnimatePresence>
             {isMenuOpen &&
-                <section className='bg-black/30 backdrop-blur-2xl h-screen fixed top-0 left-0 w-full z-50 lg:hidden block'>
+                <section className='bg-black/10 backdrop-blur-xs w-full lg:hidden fixed z-50 top-0'>
                     <motion.div
                         ref={menuRef}
                         initial={{ x: '-100%' }}
@@ -37,12 +37,12 @@ const MobileMenu = () => {
                             <h1 className="md:text-2xl text-xl font-semibold">Quick<span className="font-extrabold text-yellow-900">Bite</span></h1>
                         </Link>
                         <NavLinks className="!flex !flex-col mb-4" />
-                        <div className="flex flex-col gap-2">
-                            <Link to={"register"}><Button>Sign Up</Button></Link>
-                            <Link to={"login"}><Button variant="solid">Log In</Button></Link>
+                        <div className="flex flex-col gap-2 items-stretch">
+                            <Link to={"/signup"}><Button className='w-full'>Sign Up</Button></Link>
+                            <Link to={"/login"}><Button className='w-full' variant="solid">Log In</Button></Link>
                         </div>
-                        <button onClick={closeMenu} className="bg-amber-500 text-black rounded-2xl p-2.5 lg:hidden transition-all duration-300 hover:bg-yellow-600 active:scale-90 scale-100 absolute top-6 right-6">
-                            <X className="size-5" />
+                        <button onClick={closeMenu} className="bg-amber-500 text-black md:rounded-2xl rounded-xl p-2.5 lg:hidden transition-all duration-300 hover:bg-yellow-600 active:scale-90 scale-100 absolute top-6 right-6">
+                            <X className="md:size-5 size-4" />
                         </button>
                     </motion.div>
                 </section>
